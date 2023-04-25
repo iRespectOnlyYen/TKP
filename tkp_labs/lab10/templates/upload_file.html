@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Upload File{% endblock %}
+
+{% block content %}
+  <h2>Upload File</h2>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Upload</button>
+  </form>
+  <hr>
+  <h2>Uploaded Files</h2>
+  <ul>
+    {% for file in files %}
+      <li><a href="{{ file.file.url }}">{{ file.name }}</a></li>
+    {% empty %}
+      <li>No files uploaded yet.</li>
+    {% endfor %}
+  </ul>
+{% endblock %}

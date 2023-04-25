@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calendar</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        td {
+            border: 1px solid black;
+            padding: 5px;
+            text-align: center;
+        }
+        .today {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calendar</h1>
+    <h2>{{ current_day }}.{{ current_month }}.{{ current_year }}</h2>
+    <table>
+        <tr>
+            <th>Mon</th>
+            <th>Tue</th>
+            <th>Wed</th>
+            <th>Thu</th>
+            <th>Fri</th>
+            <th>Sat</th>
+            <th>Sun</th>
+        </tr>
+        {% for week in month_calendar %}
+        <tr>
+            {% for day in week %}
+            {% if day == 0 %}
+            <td></td>
+            {% elif day == current_day %}
+            <td class="today">{{ day }}</td>
+            {% else %}
+            <td>{{ day }}</td>
+            {% endif %}
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

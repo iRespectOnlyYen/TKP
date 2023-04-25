@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Greeting</title>
+    <style>
+        body {
+            {% if selected_color %}
+                background-color: {{ selected_color }};
+            {% endif %}
+        }
+    </style>
+</head>
+<body>
+    <form method="post">
+        {% csrf_token %}
+
+        <label for="greeting">Choose a greeting:</label><br>
+        <input type="radio" id="hello" name="greeting" value="Hello">
+        <label for="hello">Hello</label><br>
+        <input type="radio" id="Bonjour" name="greeting" value="Bonjour">
+        <label for="Bonjour">Bonjour</label><br>
+        <input type="radio" id="Hi" name="greeting" value="Hi">
+        <label for="Hi">Hi</label><br>
+        <input type="radio" id="Guten Tag" name="greeting" value="Guten Tag">
+        <label for="Guten Tag">Guten Tag</label><br>
+        <br>
+        <label for="name">Choose a name:</label><br>
+        <select id="name" name="name">
+            <option value="John">John</option>
+            <option value="Nicola">Nicola</option>
+            <option value="Ivan">Ivan</option>
+            <option value="Bob">Bob</option>
+        </select>
+        <br><br>
+        <label for="color">Choose a background color:</label><br>
+        <select id="color" name="color">
+            <option value="">None</option>
+            <option value="red">Red</option>
+            <option value="green">Green</option>
+            <option value="blue">Blue</option>
+        </select>
+        <br><br>
+        <input type="submit" value="Submit">
+    </form>
+    {% if selected_greeting and selected_name %}
+        <p>{{ selected_greeting }}, {{ selected_name }}!</p>
+    {% endif %}
+</body>
+</html>

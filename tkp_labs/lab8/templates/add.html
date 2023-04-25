@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Addition</title>
+</head>
+<body>
+    <h1>Hello world</h1>
+    {% with num1=10 num2=20 %}
+        The sum of {{ num1 }} and {{ num2 }} is {{ num1|add:num2 }}.
+    {% endwith %}
+    <br><br>
+    <br><br>
+    Find out the sum of your numbers
+    <br><br>
+
+    <form method="post">
+        {% csrf_token %}
+        <label for="num1">First number:</label>
+        <input type="text" id="num1" name="num1"><br><br>
+        <label for="num2">Second number:</label>
+        <input type="text" id="num2" name="num2"><br><br>
+        <input type="submit" value="Add">
+    </form>
+</body>
+</html>
