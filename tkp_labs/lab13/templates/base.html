@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li{% if request.path == '/lab13/' %} class="active"{% endif %}><a {% if request.path != '/lab13/' %}href="/lab13/" {% endif %}>Главная</a></li>
+            <li{% if request.path == '/about/' %} class="active"{% endif %}><a {% if request.path != '/about/' %}href="/about/" {% endif %}>О нас</a></li>
+            <li{% if request.path == '/contact/' %} class="active"{% endif %}><a {% if request.path != '/contact/' %}href="/contact/" {% endif %}>Контакты</a></li>
+        </ul>
+    </nav>
+    <div class="content">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

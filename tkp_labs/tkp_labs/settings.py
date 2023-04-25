@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'lab10.apps.Lab10Config',
     'lab11.apps.Lab11Config',
     'lab12.apps.Lab12Config',
+    'lab13.apps.Lab13Config',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

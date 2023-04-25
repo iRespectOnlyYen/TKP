@@ -26,6 +26,7 @@ from lab9.views import *
 from lab10.views import *
 from lab11.views import *
 from lab12.views import *
+from lab13.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -34,5 +35,9 @@ urlpatterns = [
     path('lab10/', upload_file, name='upload_file'),
     path('lab11/', calculator, name='calculator'),
     path('lab12/', calendar_view, name='calendar_view'),
+    path('lab13/', index, name='index'),
+    path('about/', about, name='about'),
+    path('contact/', contact, name='contact')
+
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
