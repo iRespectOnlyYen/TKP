@@ -1,10 +1,5 @@
 from django.shortcuts import render
 
-def index(request):
-    return render(request, 'index.html')
-
-def about(request):
-    return render(request, 'about.html')
-
-def contact(request):
-    return render(request, 'contact.html')
+def update_text(request):
+    animal = request.GET.get('animal', 'cats')
+    return render(request, 'index.html', {'animal': animal})

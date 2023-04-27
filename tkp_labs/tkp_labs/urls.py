@@ -28,6 +28,9 @@ from lab11.views import *
 from lab12.views import *
 from lab13.views import *
 
+
+app_name = 'lab13'
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('lab8/', add, name="add"),
@@ -35,9 +38,6 @@ urlpatterns = [
     path('lab10/', upload_file, name='upload_file'),
     path('lab11/', calculator, name='calculator'),
     path('lab12/', calendar_view, name='calendar_view'),
-    path('lab13/', index, name='index'),
-    path('about/', about, name='about'),
-    path('contact/', contact, name='contact')
-
+    path('lab13/', update_text, name='update_text'),
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
