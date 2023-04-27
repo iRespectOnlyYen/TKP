@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Кошки и собаки</title>
+</head>
+<body>
+
+    {% if animal == 'cats' %}
+        <h1>Cats</h1>
+        <p>Cats, on the other hand, are known for their independence and aloofness. They are often seen as more low-maintenance pets compared to dogs, as they do not require as much attention or exercise. However, cats can still provide companionship and affection to their owners. They are known for their agility and grace, as well as their ability to hunt and catch prey. Cats come in a variety of breeds, each with their own unique characteristics and personalities. Some breeds are known for their affectionate nature, while others are known for their aloofness. Regardless of their breed, cats require love, attention, and proper care to thrive.</p>
+        <p><span class="disabled" style="cursor: not-allowed;">Кошки</span> | <a href="?animal=dogs">Собаки</a></p>
+    {% elif animal == 'dogs' %}
+    <h1>Dogs</h1>
+        <p>Dogs are known for their loyalty and affection towards their owners. They are often referred to as "man's best friend" because of their ability to provide companionship and protection. Dogs come in a variety of breeds, each with their own unique characteristics and personalities. Some breeds are known for their intelligence and trainability, while others are known for their energy and playfulness. Regardless of their breed, dogs require love, attention, and proper care to thrive.</p>
+        <p><a href="?animal=cats">Кошки</a> | <span class="disabled" style="cursor: not-allowed;">Собаки</span></p>
+    {% endif %}
+</body>
+</html>
